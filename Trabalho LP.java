@@ -11,7 +11,7 @@ import java.util.Scanner;
 import java.util.Arrays;
 
 public class TrabalhoLP {
-    private static double A[], B[], C[];
+    private static double A[], B[], C[], D[];
 
     public static void main(String[] args) {
         // Preparação
@@ -94,6 +94,7 @@ public class TrabalhoLP {
         A = new double[tamanho];
         B = new double[tamanho];
         C = new double[tamanho];
+        D = new double[tamanho];
         return; // sem valor de retorno, porque função é void!
     }
     
@@ -162,12 +163,20 @@ public class TrabalhoLP {
         for (int i = 0; i < C.length; i++) {
             C[i] = A[i];
             A[i] = B[i];
-            B[i] = C[i];
-
         }
+        
         System.out.println("Troca dos valores do Array A pelo Array B: ");
-        System.out.println("A: " + Arrays.toString(B));
-        System.out.println("B: " + Arrays.toString(C));
+        System.out.println("Valor Anterior do Array A: " + Arrays.toString(C));
+        System.out.println("Valor Atual do Array A: " + Arrays.toString(A));
+        
+        for (int i = 0; i < D.length; i++) {
+            D[i] = B[i];
+            B[i] = C[i];
+        }
+        
+        System.out.println("Troca dos valores do Array B pelo Array A: ");
+        System.out.println("Valor Anterior do Array B: " + Arrays.toString(D));
+        System.out.println("Valor Atual do Array B: " + Arrays.toString(B));
     }
     
 }
